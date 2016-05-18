@@ -1,0 +1,33 @@
+{
+  "name": "raygame",
+  "version": "1.0.0",
+  "description": "mem",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.0.0",
+    "gulp-inject": "^4.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-open": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "gulp-serve": "^1.2.0",
+    "wiredep": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "here"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akking29/08-MemoryGame.git"
+  },
+  "keywords": [
+    "mem"
+  ],
+  "author": "adam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akking29/08-MemoryGame/issues"
+  },
+  "homepage": "https://github.com/akking29/08-MemoryGame#readme"
+}
