@@ -12,38 +12,44 @@
 <!-- endinject -->
 </head>
 
-<body ng-controller="mCtrl as vm">
+<body ng-controller="mCtrl as vm" >
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <!-- endbower -->
 <div class="page-header">
-  <h1>Everybody Remember Raymond! <small>Memory Game</small></h1>
+  <h1 id="title">Everybody Remember Raymond! <small>Memory Game</small></h1>
 </div>
 <!-- inject:js -->
 <script src="/app/app.js"></script>
 <script src="/app/memoryController.js"></script>
 <!-- endinject -->
-
-<div class='row'>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:">
+    <span class="sr-only">45% Complete</span>
+  </div>
+</div>
+<div class="container">
+	<div class="row">
 	
-	<div class='col-xs-2 card thumbnail' ng-repeat='card in vm.cards' ng-click='vm.flipCard(card)'>
-		
-		<span ng-hide='card.flipped' id='back'>Click to flip!		
-		<p>
-		<img class='image' src="/app/styles/images/cover.jpg"/>
-		</p>
-		</span>
-		<span ng-show='card.flipped' id='front'>{{card.value}}
-		<p>
-		<img class='image' src="/app/styles/images/{{card.value}}.jpg"/>
-		</p>
-		</span>
+		<div class='col-xs-6 col-sm-3 col-md-2' ng-repeat='card in vm.cards' ng-click='vm.flipCard(card)'>
+			<div class="card thumbnail">
+			<span ng-hide='card.flipped' id='back'>Click to flip!		
+			<p>
+			<img class='image' src="/app/styles/images/cover.jpg"/>
+			</p>
+			</span>
+			<span ng-show='card.flipped' id='front'>{{card.names}}
+			<p>
+			<img class='image' src="/app/styles/images/{{card.value}}.jpg"/>
+			</p>
+			</span>
+			</div>
+		</div>
 		
 	</div>
-		
-	</div>
+</div>
 	
 
 </body>

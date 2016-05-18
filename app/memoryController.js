@@ -14,6 +14,14 @@
 
 		vm.cards = [];
 		vm.flippedCard=[];
+		//had to create duplicates for each card
+		vm.names = ['Ray','Ray','Marie','Marie','Debra','Debra',
+		'Mike & Jeff','Mike & Jeff','Peter','Peter','Stefania',
+		'Stefania','Doug','Doug','Hank','Hank','Gianni','Gianni',
+		'JoAnne','JoAnne','Janitor','Janitor','Pat','Pat',
+		 'Father Husband', 'Father Husband', 'Andy', 'Andy',
+		'Amy','Amy','Trina','Trina','Ally','Ally','Frank',
+		'Frank','Robert','Robert'];
 
 
 				//need to shuffle cards
@@ -38,6 +46,8 @@
 					vm.reset = function () {
 						vm.cards=[];
 						vm.flippedCard=[];
+						vm.createCards();
+						vm.cards = shuffle(vm.cards);
 					};
 
 		vm.createCards = function(){
@@ -46,7 +56,8 @@
 					id: i,			//unique id
 					flipped: false,	//ng-show/hide
 					value: i % 2 == 0 ? i : i -1, //pair value
-					disabled: false //once a matching pair is found, disable this card
+					disabled: false, //once a matching pair is found, disable this card
+					names: vm.names[i]
 
 				});
 
@@ -59,7 +70,7 @@
 				//precheck
 				//check that current card has not already been selected
 				var cardCurrentlyFlipped = false;
-				vm.cards.forEach(function(i, loopCard){
+				vm.flippedCard.forEach(function(loopCard){
 					if(card.id === loopCard.id){
 						cardCurrentlyFlipped = true;
 					}
@@ -88,7 +99,7 @@
 						var gameOver = vm.cards.every(function(loopCard){
 							return loopCard.disabled;
 						});
-						
+
 						if(gameOver){
 							alert('game over!');
 							vm.reset();
@@ -114,6 +125,7 @@
 			}
 
 		};
+
 		vm.createCards();
 		console.log(vm.cards);
 
