@@ -1,0 +1,32 @@
+.card {
+
+	border: 1px solid black;
+	text-align: center;
+
+}
+
+#front {
+
+	height: 100px;
+	width:100px;
+}
+
+#back {
+
+	height: 100px;
+	width:100px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.image {
+
+	height: 100px;
+	width:100px;
+}
+
+.page-header {
+
+	color:blue;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+

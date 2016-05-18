@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="memory">
+<head>
+ <meta charset="UTF-8">
+ <title>Mem Game</title>
+<!-- bower:css -->
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+<!-- endbower -->
+
+<!-- inject:css -->
+<link rel="stylesheet" href="/app/styles/style.css">
+<!-- endinject -->
+</head>
+
+<body ng-controller="mCtrl as vm">
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<!-- endbower -->
+<div class="page-header">
+  <h1>Bitch, Remember Raymond! <small>Guessing Game</small></h1>
+</div>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="{{card.value}}" aria-valuemin="0" aria-valuemax="100" style="width: {{loopCard}}%;">
+    <span class="sr-only">60% Complete</span>
+  </div>
+</div>
+<!-- inject:js -->
+<script src="/app/app.js"></script>
+<script src="/app/memoryController.js"></script>
+<!-- endinject -->
+
+<div class='row'>
+	
+	<div class='col-xs-2 card thumbnail' ng-repeat='card in vm.cards' ng-click='vm.flipCard(card)'>
+		
+		<span ng-hide='card.flipped' id='back'>Click to flip!		
+		<p>
+		<img class='image' src="/app/styles/images/cover.jpg"/>
+		</p>
+		</span>
+		<span ng-show='card.flipped' id='front'>{{card.value}}
+		<p>
+		<img class='image' src="/app/styles/images/{{card.value}}.jpg"/>
+		</p>
+		</span>
+		
+	</div>
+		
+	</div>
+	
+
+</body>
+</html>
