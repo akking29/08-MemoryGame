@@ -94,6 +94,7 @@
 						vm.flippedCard[0].disabled=true;
 						vm.flippedCard[1].disabled=true;
 						//3. clear the currently flipped array
+						
 						vm.flippedCard = [];
 
 						var gameOver = vm.cards.every(function(loopCard){
@@ -101,7 +102,7 @@
 						});
 
 						if(gameOver){
-							alert('game over!');
+							alert('You have remembered Ray!');
 							vm.reset();
 						}
 
