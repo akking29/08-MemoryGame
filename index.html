@@ -1,51 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="memory">
-<head>
- <meta charset="UTF-8">
- <title>Mem Game</title>
-<!-- bower:css -->
-<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-<!-- endbower -->
 
-<!-- inject:css -->
-<link rel="stylesheet" href="/app/styles/style.css">
-<!-- endinject -->
+<head>
+    <meta charset="UTF-8">
+    <title>Mem Game</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/app/styles/style.css">
+    <!-- endinject -->
 </head>
 
-<body ng-controller="mCtrl as vm" >
-<!-- bower:js -->
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="bower_components/angular/angular.js"></script>
-<!-- endbower -->
-<div class="page-header">
-  <h1 id="title">Everybody Remember Raymond! <small>Memory Game</small></h1>
-</div>
-<!-- inject:js -->
-<script src="/app/app.js"></script>
-<script src="/app/memoryController.js"></script>
-<!-- endinject -->
-<div class="container">
-	<div class="row">
-	
-		<div class='col-xs-6 col-sm-3 col-md-2' ng-repeat='card in vm.cards' ng-click='vm.flipCard(card)'>
-			<div class="card thumbnail" ng-class="{'match':card.disabled}">
-			<span ng-hide='card.flipped' id='back'>Click to flip!		
+<body ng-controller="mCtrl as vm">
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <!-- endbower -->
+    <div class="page-header">
+        <h1 id="title">Everybody Remember Raymond! <small>Memory Game</small></h1>
+    </div>
+    <!-- inject:js -->
+    <script src="/app/app.js"></script>
+    <script src="/app/memoryController.js"></script>
+    <!-- endinject -->
+    <div class="container">
+        <div class="row">
+            <div class='col-xs-6 col-sm-3 col-md-2' ng-repeat='card in vm.cards' ng-click='vm.flipCard(card)'>
+                <div class="card thumbnail" ng-class="{'match':card.disabled}">
+                    <span ng-hide='card.flipped' id='back'>Click to flip!		
 			<p>
 			<img class='image' src="/app/styles/images/cover.jpg"/>
 			</p>
 			</span>
-			<span ng-show='card.flipped' id='front'>{{card.names}}
+                    <span ng-show='card.flipped' id='front'>{{card.names}}
 			<p>
 			<img class='image' src="/app/styles/images/{{card.value}}.jpg"/>
 			</p>
 			</span>
-			</div>
-		</div>
-		
-	</div>
-</div>
-	
-
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
